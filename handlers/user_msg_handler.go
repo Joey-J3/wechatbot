@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/869413421/wechatbot/gtp"
+	"github.com/JA-Coding-J/wechatbot/gtp"
 	"github.com/eatmoreapple/openwechat"
 	"log"
 	"strings"

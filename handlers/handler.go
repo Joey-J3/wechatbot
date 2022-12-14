@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"fmt"
-	"github.com/869413421/wechatbot/config"
-	"github.com/869413421/wechatbot/service"
+	"github.com/JA-Coding-J/wechatbot/config"
+	"github.com/JA-Coding-J/wechatbot/service"
 	"github.com/eatmoreapple/openwechat"
 	"github.com/skip2/go-qrcode"
 	"log"

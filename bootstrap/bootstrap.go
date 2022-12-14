@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"github.com/869413421/wechatbot/handlers"
+	"github.com/JA-Coding-J/wechatbot/handlers"
 	"github.com/eatmoreapple/openwechat"
 	// "time"
 	// "strings"

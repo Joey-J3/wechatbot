@@ -30,6 +30,7 @@ func NewUserMessageHandler() MessageHandlerInterface {
 func (g *UserMessageHandler) ReplyText(msg *openwechat.Message) error {
 	// 接收私聊消息
 	sender, err := msg.Sender()
+	// TODO: log user msg
 	log.Printf("Received User %v Text Msg : %v", sender.NickName, msg.Content)
 	if UserService.ClearUserSessionContext(sender.ID(), msg.Content) {
 		_, err = msg.ReplyText("上下文已经清空了，你可以问下一个问题啦。")
@@ -62,6 +63,10 @@ func (g *UserMessageHandler) ReplyText(msg *openwechat.Message) error {
 	_, err = msg.ReplyText(reply)
 	if err != nil {
 		log.Printf("response user error: %v \n", err)
+		// 给文件助手发消息
+		self, _ := msg.Bot.GetCurrentUser()
+		_, err = self.SendTextToFriend(openwechat.NewFriendHelper(self), reply)
 	}
+
 	return err
 }
